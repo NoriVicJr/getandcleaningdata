@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Introduction</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h2>Introduction</h2>
+
+<p>The script run_analysis.r is the R script to create a tidy data set with the variable descriptions explaned in the codebook.md.</p>
+
+<p>This script is written to make a tidy data set with only the mean and standard deviation values for different measaurement signals (Accelerometer and gyroscope) obtained from Samsung Galaxy SII device, generated from 30 volunteers over 6 differnt activity types that include (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, LAYING, STANDING, SITTING)</p>
+
+<h2>Pre-Conditions</h2>
+
+<p>run_analysis.r should be placed in the working folder that also has the data downloaded from 
+<a href="https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip">https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip</a> </p>
+
+<p><b>Warning</b>
+1. run_analysis.r first checks for the Zip file, if ZIp file present then unzips it
+2. run_analysis.r then checks for the unzipped data folder, if present continues with the analysis
+3. run_analysis.r shows a prompt if no data folder present in the working folder for analysis</p>
+
+<h2>Tidy Data Set Generation</h2>
+
+<p><b>Script FLow </b></p>
+
+<p>Step 1 : Since the he obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.</p>
+
+<ul>
+<li>run_analysis.r first merges both these data into a single data set</li>
+<li>run_analysis.r seconds merges subjects/volunteers to  single data set</li>
+<li> run_analysis.r thirdly merges activity descriptive names to  these data into a single data folder</li>
+</ul>
+
+<p>Step 2 :Extracts only the measurements on the mean and standard deviation for each measurement</p>
+
+<ul>
+<li> run_analysis.r applies grep and filters columns from 561 observations to only the fields related to mean and stndard deviation</li>
+</ul>
+
+<p>Step 3: Follow the norm of a tidy data set </p>
+
+<ul>
+<li> run_analysis.r then updated numeriv acitivity values with descriptive values</li>
+<li> run_analysis.r format the header names to not incude special character and changes the names to all lower cases, applies makes.names
+to format data to meet r data set requirements</li>
+</ul>
+
+<p>Step 4: Reshape data to contain per second data measurement per subject per activity</p>
+
+<ul>
+<li>run_analysis.r applies melt and dcast methods to reshape the data to be wide and long with per
+sec mean data measurement per subject/per activity</li>
+</ul>
+
+<h2>Tidy Data Set</h2>
+
+<ul>
+<li>After running the run_analysis. r, it generates a tidy dataset with 180 rows and 68 columns, as explained in codebook.html</li>
+<li>the  tidy data set is in .txt format with the name tidy_dataset.txt</li>
+</ul>
+
+</body>
+
+</html>
+

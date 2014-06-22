@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>Human Activity Recognition Using Smartphones Dataset</title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1>Human Activity Recognition Using Smartphones Dataset</h1>
+
+<p>Raw data collected from Samsung Galaxy S II to understand human activities using its embedded accelerometer and gyroscope was performed.</p>
+
+<p>Raw data captured included </p>
+
+<ol>
+<li><p>3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz</p></li>
+<li><p>The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data</p></li>
+<li><p>The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window)</p></li>
+<li><p>The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity</p></li>
+<li><p>The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used.</p></li>
+</ol>
+
+<h2>Tidy Data Set Label Descriptions</h2>
+
+<p>Tidy Data set for understanding Human Activity Recognition contains only the measurements on the mean and standard deviation for each test measurement carried with the (Samsung Galaxy S II) on the waist of the  volunteers
+Raw Data collected was downlaod from the website <a href="http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones">http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones</a>. 
+Data was post processed and combined accrodingly to make a single tidy set which gives the information of the mean and standard 
+deviation for each volunteers test measurement captured against their different activity</p>
+
+<p><strong>Explained below are the desciptions of each field names that form the tidy data set.</strong></p>
+
+<h3>1. subject</h3>
+
+<p>The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years</p>
+
+<ul>
+<li><b>The Values  are </b>
+
+<ol>
+<li>Each &ldquo;subject&rdquo; signifies individual person, with id ranging from 1 to 30</li>
+</ol></li>
+</ul>
+
+<h3>2. activity</h3>
+
+<p>Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist</p>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Walking</li>
+<li>WALKING_UPSTAIRS</li>
+<li>WALKING_DOWNSTAIRS</li>
+<li>SITTING</li>
+<li>STANDING</li>
+<li>LAYING</li>
+</ol></li>
+</ul>
+
+<h3>3. tbodyacc.mean.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body accelerometer in X direction </li>
+</ol></li>
+</ul>
+
+<h3>4. tbodyacc.mean.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body accelerometer in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>5. tbodyacc.mean.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body accelerometer in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>6. tbodyacc.std.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body accelerometer in X direction </li>
+</ol></li>
+</ul>
+
+<h3>7. bodyacc.std.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body accelerometer in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>8. tbodyacc.std.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body accelerometer in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>9. tgravityacc.mean.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body gravity in X direction </li>
+</ol></li>
+</ul>
+
+<h3>10. tgravityacc.mean.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body gravity in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>11. tgravityacc.mean.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body gravity in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>12. tgravityacc.std.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body gravity in X direction </li>
+</ol></li>
+</ul>
+
+<h3>13. tgravityacc.std.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body gravity in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>14. tgravityacc.std.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body gravity in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>15. tbodyaccjerk.mean.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body accelerometer with jerk  in X direction </li>
+</ol></li>
+</ul>
+
+<h3>16. tbodyaccjerk.mean.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body accelerometer with jerk  in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>17. tbodyaccjerk.mean.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body accelerometer with jerk  in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>18. tbodyaccjerk.std.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standrard Deviation of the time domain signal for body accelerometer with jerk  in X direction </li>
+</ol></li>
+</ul>
+
+<h3>19. tbodyaccjerk.std.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standrard Deviation of the time domain signal for body accelerometer with jerk  in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>20. tbodyaccjerk.std.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standrard Deviation of the time domain signal for body accelerometer with jerk  in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>21. tbodygyro.mean.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body gyroscope with jerk  in X direction </li>
+</ol></li>
+</ul>
+
+<h3>22. tbodygyro.mean.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body gyroscope with jerk  in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>23. tbodygyro.mean.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body gyroscope with jerk  in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>24. tbodygyro.std.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body gyroscope with jerk  in X direction </li>
+</ol></li>
+</ul>
+
+<h3>25. tbodygyro.std.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body gyroscope with jerk  in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>26. tbodygyro.std.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body gyroscope with jerk  in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>27. tbodygyrojerk.mean.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body gyroscope with jerk  in X direction </li>
+</ol></li>
+</ul>
+
+<h3>28. tbodygyrojerk.mean.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body gyroscope with jerk  in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>29. tbodygyrojerk.mean.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body gyroscope with jerk  in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>30. tbodygyrojerk.std.x</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body gyroscope with jerk  in X direction </li>
+</ol></li>
+</ul>
+
+<h3>31. tbodygyrojerk.std.y</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body gyroscope with jerk  in Y direction </li>
+</ol></li>
+</ul>
+
+<h3>32. tbodygyrojerk.std.z</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for body gyroscope with jerk  in Z direction </li>
+</ol></li>
+</ul>
+
+<h3>33. tbodyaccmag.mean</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for body Accelerometer in magnituge</li>
+</ol></li>
+</ul>
+
+<h3>34. tbodyaccmag.std</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation  of the time domain signal for body Accelerometer in  magnituge </li>
+</ol></li>
+</ul>
+
+<h3>35. tgravityaccmag.mean</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for  gravity accelerometer in  magnituge<br/></li>
+</ol></li>
+</ul>
+
+<h3>36. tgravityaccmag.std</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for  gravity accelerometer in  magnituge </li>
+</ol></li>
+</ul>
+
+<h3>37. tbodyaccjerkmag.mean</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for  body  accelerometer jerk in magnitude </li>
+</ol></li>
+</ul>
+
+<h3>38. tbodyaccjerkmag.std</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for  body  accelerometer jerk in magnitude </li>
+</ol></li>
+</ul>
+
+<h3>39. tbodygyromag.mean</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for  body  Gyroscope  in magnitude </li>
+</ol></li>
+</ul>
+
+<h3>40. tbodygyromag.std</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Standard Deviation of the time domain signal for  body  Gyroscope  in magnitude </li>
+</ol></li>
+</ul>
+
+<h3>41. tbodygyrojerkmag.mean</h3>
+
+<ul>
+<li><b>The Values are </b>
+
+<ol>
+<li>Mean of the time domain signal for  body  Gyroscope jerk in magnitude </li>
+</ol></li>
+</ul>
+
+<h3>42. tbodygyrojerkmag.std</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation of the time domain signal for  body  Gyroscope jerk in magnitude </li>
+</ol>
+
+<h3>43. fbodyacc.mean.x</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean of the frequency domain signal for  body  accelerometer in X Direction</li>
+</ol>
+
+<h3>44. fbodyacc.mean.y</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean of the frequency domain signal for  body  accelerometer in Y Direction</li>
+</ol>
+
+<h3>45. fbodyacc.mean.z</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean of the frequency domain signal for  body  accelerometer in Z Direction</li>
+</ol>
+
+<h3>46. fbodyacc.std.x</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation of the frequency domain signal for  body  accelerometer in X Direction</li>
+</ol>
+
+<h3>47. fbodyacc.std.y</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation of the frequency domain signal for  body  accelerometer in Y Direction</li>
+</ol>
+
+<h3>48. fbodyacc.std.z</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation of the frequency domain signal for  body  accelerometer in Z Direction</li>
+</ol>
+
+<h3>49. fbodyaccjerk.mean.x</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean  of the frequency domain signal for  body  accelerometer jerk in X Direction</li>
+</ol>
+
+<h3>50. fbodyaccjerk.mean.y</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean  of the frequency domain signal for  body  accelerometer jerk in Y Direction</li>
+</ol>
+
+<h3>51. fbodyaccjerk.mean.z</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean  of the frequency domain signal for  body  accelerometer jerk in Z Direction</li>
+</ol>
+
+<h3>52. fbodyaccjerk.std.x</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation  of the frequency domain signal for  body  accelerometer jerk in X Direction</li>
+</ol>
+
+<h3>53. fbodyaccjerk.std.y</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation  of the frequency domain signal for  body  accelerometer jerk in Y Direction</li>
+</ol>
+
+<h3>54. fbodyaccjerk.std.z</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation  of the frequency domain signal for  body  accelerometer jerk in Z Direction</li>
+</ol>
+
+<h3>55. fbodygyro.mean.x</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean  of the frequency domain signal for  body  gyroscope  in X Direction</li>
+</ol>
+
+<h3>56. fbodygyro.mean.y</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean  of the frequency domain signal for  body  gyroscope  in Y Direction</li>
+</ol>
+
+<h3>57. fbodygyro.mean.z</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean  of the frequency domain signal for  body  gyroscope  in Z Direction</li>
+</ol>
+
+<h3>58. fbodygyro.std.x</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation  of the frequency domain signal for  body  gyroscope  in X Direction</li>
+</ol>
+
+<h3>59. fbodygyro.std.y</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation  of the frequency domain signal for  body  gyroscope  in Y Direction</li>
+</ol>
+
+<h3>60. fbodygyro.std.z</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation  of the frequency domain signal for  body  gyroscope  in Z Direction</li>
+</ol>
+
+<h3>61. fbodyaccmag.mean</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean  of the frequency domain signal for  body  accelerometer   in magnitude</li>
+</ol>
+
+<h3>62. fbodyaccmag.std</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation  of the frequency domain signal for  body  accelerometer   in magnitude</li>
+</ol>
+
+<h3>63. fbodybodyaccjerkmag.mean</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean  of the frequency domain signal for  body  accelerometer jerk   in magnitude</li>
+</ol>
+
+<h3>64. fbodybodyaccjerkmag.std</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation  of the frequency domain signal for  body  accelerometer jerk   in magnitude</li>
+</ol>
+
+<h3>65. fbodybodygyromag.mean</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean of the frequency domain signal for  body  gyroscope    in magnitude</li>
+</ol>
+
+<h3>66. fbodybodygyromag.std</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation of the frequency domain signal for  body  gyroscope    in magnitude</li>
+</ol>
+
+<h3>67. fbodybodygyrojerkmag.mean</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Mean of the frequency domain signal for  body  gyroscope jerk   in magnitude</li>
+</ol>
+
+<h3>68. fbodybodygyrojerkmag.std</h3>
+
+<p><b>The Values are </b></p>
+
+<ol>
+<li>Standard Deviation of the frequency domain signal for  body  gyroscope jerk   in magnitude</li>
+</ol>
+
+</body>
+
+</html>
+
